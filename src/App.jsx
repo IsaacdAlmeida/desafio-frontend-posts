@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import Home from './pages/main/Home';
 import PostDetails from './pages/details/PostDetails';
-import './App.css';
 
 function App() {
   return (

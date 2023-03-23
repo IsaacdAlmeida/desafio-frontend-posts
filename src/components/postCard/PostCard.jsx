@@ -1,37 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Box, Heading, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
 function PostCard({
-  userName,
   postId,
   title,
   body,
 }) {
   return (
-    <div>
-      <div>
-        <Link to={`/post/${postId}`}>
-          <h3>
-            {title}
-          </h3>
-        </Link>
-        <p>
-          {`Escrito por ${userName}`}
-        </p>
-        <p>
-          {body}
-        </p>
-      </div>
-    </div>
+    <Box p={4} borderWidth="1px" borderRadius="md" boxShadow="md" overflow="hidden">
+      <Link to={`/post/${postId}`}>
+        <Heading as="h3" size="md" mb={2}>
+          {title}
+        </Heading>
+      </Link>
+      <Text>
+        {body}
+      </Text>
+    </Box>
   );
 }
 
 PostCard.propTypes = {
-  userName: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]).isRequired,
   postId: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
