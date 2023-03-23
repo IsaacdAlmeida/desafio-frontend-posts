@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function PostCard({
-  userId,
+  userName,
   postId,
   title,
   body,
@@ -17,7 +17,7 @@ function PostCard({
           </h3>
         </Link>
         <p>
-          {`Escrito por ${userId}`}
+          {`Escrito por ${userName}`}
         </p>
         <p>
           {body}
@@ -28,7 +28,7 @@ function PostCard({
 }
 
 PostCard.propTypes = {
-  userId: PropTypes.oneOfType([
+  userName: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
   ]).isRequired,

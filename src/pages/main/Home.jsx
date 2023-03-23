@@ -2,21 +2,27 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPosts } from '../../services/apiPostsHelper';
 import { setPosts } from '../../redux/reducers/postSlice';
+import { setUsers } from '../../redux/reducers/usersSlice';
 import PostCard from '../../components/postCard/PostCard';
+import { getUsers } from '../../services/apiUserHelper';
 
 function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const allPosts = async () => {
+    const mainPost = async () => {
       const response = await getPosts();
       dispatch(setPosts(response));
+
+      const users = await getUsers();
+      dispatch(setUsers(users));
     };
 
-    allPosts();
+    mainPost();
   }, []);
 
   const { posts } = useSelector((state) => state.postSlice);
+  const { arrayOfUsers } = useSelector((state) => state.usersSlice);
 
   // Fiz a substituição do uso do context, poderia ter utilizado o useState,
   // mas vou precisar utilizar o array contendo todos os posts em outros lugares,
@@ -28,15 +34,19 @@ function Home() {
   return (
     <div>
       {
-        posts.map((item) => (
-          <PostCard
-            key={item.id}
-            userId={item.userId}
-            postId={item.id}
-            title={item.title}
-            body={item.body}
-          />
-        ))
+        posts.map((item) => {
+          const postAuthor = arrayOfUsers.find((author) => author.id === item.userId);
+
+          return (
+            <PostCard
+              key={item.id}
+              userName={postAuthor.name}
+              postId={item.id}
+              title={item.title}
+              body={item.body}
+            />
+          );
+        })
       }
     </div>
   );
