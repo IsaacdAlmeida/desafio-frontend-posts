@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# Recipes App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introdução
 
-## Available Scripts
+O projeto consiste em construir uma página de blog funcional e responsiva consumindo alguns endpoints, é exibido uma lista de postagens com título e corpo, também é exibido, ao clicar em um post, mais detalhes sobre o post, como autor e comentários.
 
-In the project directory, you can run:
+## Ferramentas utilizadas
 
-### `npm start`
+- React
+- Redux
+- Javascript
+- Lint
+- Chakra UI
+- Axios
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Instruções para utilizar a aplicação
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Para utilizar a aplicação você precisará ter o [node](https://nodejs.org/en/download/), [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) e [git](https://git-scm.com/downloads)instalados.
 
-### `npm test`
+Após instalação dos aplicativos acima você deverá clonar o repositório.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone 
+```
 
-### `npm run build`
+Entre na pasta raiz do projeto e utilize o comando `npm install` para instalar as dependências do projeto.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Após instalar todos os pacotes, utilize o comando `npm start` para exibir a página da aplicação, a aplicação ficará disponível em:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+http://localhost:3000
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Estrutura da aplicação
 
-### `npm run eject`
+```js
+📦src
+ ┣ 📂components
+ ┃ ┣ 📂buttons
+ ┃ ┃ ┗ 📜ToggleColorMode.jsx
+ ┃ ┣ 📂commentSection
+ ┃ ┃ ┗ 📜CommentSection.jsx
+ ┃ ┣ 📂header
+ ┃ ┃ ┗ 📜Header.jsx
+ ┃ ┣ 📂loading
+ ┃ ┃ ┗ 📜Loading.jsx
+ ┃ ┣ 📂postCard
+ ┃ ┃ ┗ 📜PostCard.jsx
+ ┃ ┗ 📂postSection
+ ┃ ┃ ┗ 📜PostSection.jsx
+ ┣ 📂pages
+ ┃ ┣ 📂details
+ ┃ ┃ ┗ 📜PostDetails.jsx
+ ┃ ┗ 📂main
+ ┃ ┃ ┗ 📜Home.jsx
+ ┣ 📂redux
+ ┃ ┣ 📂reducers
+ ┃ ┃ ┣ 📜postSlice.js
+ ┃ ┃ ┗ 📜usersSlice.js
+ ┃ ┗ 📂store
+ ┃ ┃ ┗ 📜index.js
+ ┣ 📂services
+ ┃ ┣ 📜apiPostsHelper.js
+ ┃ ┗ 📜apiUserHelper.js
+ ┣ 📜App.jsx
+ ┣ 📜index.jsx
+ ┗ 📜theme.js
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Components
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+O Diretório guarda todos os componentes que podem ser reutilizados em nossa aplicação.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Por exemplo, o componente `Header.jsx` é renderizado em todas as páginas.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Pages
 
-## Learn More
+Responsável por armazenar todos as páginas de nossa aplicação onde serão renderizados os componentes. O Projeto conta com duas páginas, a Home e Página de detalhes de um post.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Redux
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Armazena toda a lógica do redux para gerenciar o estado na aplicação.
 
-### Code Splitting
+### Services
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Armazena os arquivos responsáveis por fazer as chamadas às APIs necessárias para funcionamento da aplicação, dessa forma evitamos repetição de código, bastando chamar a função necessária em qualquer lugar do código para chamar a API.
 
-### Analyzing the Bundle Size
+### Arquivo App.jsx
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Onde é renderizada as páginas de nossa aplicação, onde configuramos as rotas das páginas utilizando `react-router-dom`, onde utilizamos o provider do Redux.
 
-### Making a Progressive Web App
+### Arquivo index.jsx
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+O arquivo raíz da aplicação React, responsável por configurar alguns elementos, como o Chakra Provider e BrowserRouter.
 
-### Advanced Configuration
+### Arquivo theme.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Arquivo necessário para configurar os temas globais do Chakra UI.
 
-### Deployment
+## Histórico de commits
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Você pode verificar todo o histório de commits para saber como a aplicação foi desenvolvida passo a passo, todos eles foram feitos com base no guia de [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/), mantendo uma organização e descrição objetiva do que foi feito a cada mudança!
