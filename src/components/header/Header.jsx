@@ -11,7 +11,6 @@ import {
   MenuList,
   MenuItem,
   Link,
-  LinkOverlay,
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { NavLink as ReachLink } from 'react-router-dom';
@@ -43,15 +42,19 @@ function Header() {
           bg="whiteAlpha.100"
         />
         <MenuList>
-          <LinkOverlay as={ReachLink} to="/home">
+          <Link as={ReachLink} to="/home">
             <MenuItem>
               Home
             </MenuItem>
-          </LinkOverlay>
-          <MenuItem>Create a Copy</MenuItem>
-          <MenuItem>Mark as Draft</MenuItem>
-          <MenuItem>Delete</MenuItem>
-          <MenuItem>Attend a Workshop</MenuItem>
+          </Link>
+          <Link href="https://www.linkedin.com/in/isaacalmeidafilho/" isExternal>
+            <MenuItem>Linkedin</MenuItem>
+          </Link>
+          <Link href="https://github.com/IsaacdAlmeida" isExternal>
+            <MenuItem>Github</MenuItem>
+          </Link>
+          <MenuItem>Contato</MenuItem>
+          <MenuItem>Lore Ipsum</MenuItem>
         </MenuList>
       </Menu>
       <ToggleColorMode />
