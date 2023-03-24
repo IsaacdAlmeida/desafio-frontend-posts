@@ -5,6 +5,7 @@ import { getPosts } from '../../services/apiPostsHelper';
 import { setPosts } from '../../redux/reducers/postSlice';
 import { setUsers } from '../../redux/reducers/usersSlice';
 import PostCard from '../../components/postCard/PostCard';
+import ToggleColorMode from '../../components/buttons/ToggleColorMode';
 import { getUsers } from '../../services/apiUserHelper';
 
 function Home() {
@@ -26,6 +27,7 @@ function Home() {
 
   return (
     <VStack spacing={4}>
+      <ToggleColorMode />
       <Grid
         templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)']}
         gap={4}
