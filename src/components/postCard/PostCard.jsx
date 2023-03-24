@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Box,
+  LinkBox,
   Heading,
   Text,
   Image,
   Container,
-  Link,
+  LinkOverlay,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { NavLink as ReachLink } from 'react-router-dom';
 
@@ -17,14 +18,14 @@ function PostCard({
   body,
 }) {
   return (
-    <Box p={2} borderWidth="1px" borderRadius="md" boxShadow="md" overflow="hidden" bg="gray.100">
+    <LinkBox p={2} borderWidth="1px" borderRadius="md" boxShadow="md" overflow="hidden" bg={useColorModeValue('blue.50', 'whiteAlpha.300')}>
       <Container display="flex" flexDir="column" justifyContent="space-around">
         <Image src={postImage} alt={title} borderRadius="md" />
-        <Link as={ReachLink} to={`/post/${postId}`}>
+        <LinkOverlay as={ReachLink} to={`/post/${postId}`}>
           <Heading as="h3" size="md" mt={2} mb={2} fontWeight="extrabold" textAlign="justify" noOfLines={2}>
             {title}
           </Heading>
-        </Link>
+        </LinkOverlay>
       </Container>
       <Container>
         <Text
@@ -33,7 +34,7 @@ function PostCard({
           {body}
         </Text>
       </Container>
-    </Box>
+    </LinkBox>
   );
 }
 

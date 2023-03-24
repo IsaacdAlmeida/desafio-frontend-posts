@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Container,
+  Flex,
   Avatar,
   Box,
   Text,
@@ -16,14 +16,14 @@ function CommentSection({
   authorImage,
 }) {
   return (
-    <Container
-      bg="gray.50"
+    <Flex
+      bg={useColorModeValue('blackAlpha.200', 'whiteAlpha.300')}
       py={5}
       px={3}
-      spacing={{ base: 1, md: 2 }}
-      align="center"
+      justifyContent="center"
       direction="column"
       maxW="4xl"
+      mt="10px"
     >
       <Text
         fontSize={{ base: 'md', md: 'md' }}
@@ -40,12 +40,12 @@ function CommentSection({
         />
 
         <Text fontWeight={600}>{name}</Text>
-        <Text fontSize="sm" color={useColorModeValue('gray.400', 'gray.400')}>
+        <Text fontSize="sm" color={useColorModeValue('blackAlpha.700', 'gray.400')}>
           {email}
         </Text>
       </Box>
       <Divider borderColor="blackAlpha.300" />
-    </Container>
+    </Flex>
   );
 }
 

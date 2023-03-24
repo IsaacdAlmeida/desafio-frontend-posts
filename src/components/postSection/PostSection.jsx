@@ -19,6 +19,7 @@ function PostSection({
       flexDirection="column"
       maxW="4xl"
       alignItems="center"
+      px="2"
     >
       <Box py="5">
         <Heading as="h2" size="lg" textTransform="uppercase" letterSpacing="1px">{title}</Heading>

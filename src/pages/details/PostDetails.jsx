@@ -8,6 +8,7 @@ import { getPostComments } from '../../services/apiPostsHelper';
 import Loading from '../../components/loading/Loading';
 import PostSection from '../../components/postSection/PostSection';
 import CommentSection from '../../components/commentSection/CommentSection';
+import Header from '../../components/header/Header';
 
 function PostDetails() {
   const { id } = useParams();
@@ -37,6 +38,7 @@ function PostDetails() {
         ? <Loading />
         : (
           <div>
+            <Header />
             <Box
               display="flex"
               flexDirection="column"
@@ -57,7 +59,11 @@ function PostDetails() {
                 })
               }
             </Box>
-            <div>
+            <Box
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+            >
               {
                 comments.map((item) => (
                   <CommentSection
@@ -69,7 +75,7 @@ function PostDetails() {
                   />
                 ))
               }
-            </div>
+            </Box>
           </div>
         )}
     </div>
