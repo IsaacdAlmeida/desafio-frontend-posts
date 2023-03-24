@@ -37,6 +37,7 @@ function Home() {
           posts.map((item) => (
             <PostCard
               key={item.id}
+              postImage={`https://picsum.photos/id/${item.id}/400/400`}
               postId={item.id}
               title={item.title}
               body={item.body}
