@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import {
+  Box,
+} from '@chakra-ui/react';
 import { getPostComments } from '../../services/apiPostsHelper';
 import Loading from '../../components/loading/Loading';
 import PostSection from '../../components/postSection/PostSection';
@@ -34,7 +37,11 @@ function PostDetails() {
         ? <Loading />
         : (
           <div>
-            <div>
+            <Box
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+            >
               {
                 post.map((item) => {
                   const postAuthor = arrayOfUsers.find((author) => author.id === item.userId);
@@ -49,7 +56,7 @@ function PostDetails() {
                   );
                 })
               }
-            </div>
+            </Box>
             <div>
               {
                 comments.map((item) => (

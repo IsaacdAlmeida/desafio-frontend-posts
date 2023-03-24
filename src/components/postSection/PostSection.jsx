@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import {
   Box,
   Button,
+  Heading,
+  Text,
 } from '@chakra-ui/react';
 import { BiLike, BiChat, BiShare } from 'react-icons/bi';
 
@@ -12,22 +14,35 @@ function PostSection({
   postAuthor,
 }) {
   return (
-    <div>
-      <div>
-        <h1>{title}</h1>
-      </div>
-      <div>
-        <p>{`Escrito por ${postAuthor}`}</p>
-      </div>
-      <div>
-        <p>{body}</p>
-      </div>
+    <Box
+      display="flex"
+      flexDirection="column"
+      maxW="4xl"
+      alignItems="center"
+    >
+      <Box py="5">
+        <Heading as="h2" size="lg" textTransform="uppercase" letterSpacing="1px">{title}</Heading>
+        <Text
+          color="gray.500"
+          fontWeight="semibold"
+          letterSpacing="wide"
+          fontSize="xs"
+        >
+          {`Escrito por ${postAuthor}`}
+        </Text>
+      </Box>
+      <Text
+        letterSpacing="wide"
+        fontSize="md"
+      >
+        {body}
+      </Text>
       <Box
         justify="space-between"
         flexWrap="wrap"
         sx={{
           '& > button': {
-            minW: '136px',
+            minW: '120px',
           },
         }}
       >
@@ -41,7 +56,7 @@ function PostSection({
           Share
         </Button>
       </Box>
-    </div>
+    </Box>
   );
 }
 
