@@ -15,12 +15,12 @@ O projeto consiste em construir uma página de blog funcional e responsiva consu
 
 ## Instruções para utilizar a aplicação
 
-Para utilizar a aplicação você precisará ter o [node](https://nodejs.org/en/download/), [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) e [git](https://git-scm.com/downloads)instalados.
+Para utilizar a aplicação você precisará ter o [node](https://nodejs.org/en/download/), [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) e [git](https://git-scm.com/downloads) instalados.
 
 Após instalação dos aplicativos acima você deverá clonar o repositório.
 
 ```bash
-git clone 
+git clone git@github.com:IsaacdAlmeida/desafio-frontend-posts.git
 ```
 
 Entre na pasta raiz do projeto e utilize o comando `npm install` para instalar as dependências do projeto.
