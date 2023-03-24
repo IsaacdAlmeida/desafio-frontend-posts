@@ -17,7 +17,7 @@ function CommentSection({
 }) {
   return (
     <Flex
-      bg={useColorModeValue('blackAlpha.200', 'whiteAlpha.300')}
+      bg={useColorModeValue('blue.50', 'whiteAlpha.300')}
       py={5}
       px={3}
       justifyContent="center"

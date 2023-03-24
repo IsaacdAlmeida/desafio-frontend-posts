@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {
   Box,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { getPostComments } from '../../services/apiPostsHelper';
 import Loading from '../../components/loading/Loading';
@@ -39,42 +40,44 @@ function PostDetails() {
         : (
           <div>
             <Header />
-            <Box
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-            >
-              {
-                post.map((item) => {
-                  const postAuthor = arrayOfUsers.find((author) => author.id === item.userId);
+            <Box bg={useColorModeValue('gray.100', 'blackAlpha.100')}>
+              <Box
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                {
+                  post.map((item) => {
+                    const postAuthor = arrayOfUsers.find((author) => author.id === item.userId);
 
-                  return (
-                    <PostSection
+                    return (
+                      <PostSection
+                        key={item.id}
+                        title={item.title}
+                        body={item.body}
+                        postAuthor={postAuthor.name}
+                      />
+                    );
+                  })
+                }
+              </Box>
+              <Box
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                {
+                  comments.map((item) => (
+                    <CommentSection
                       key={item.id}
-                      title={item.title}
+                      name={item.name}
                       body={item.body}
-                      postAuthor={postAuthor.name}
+                      email={item.email}
+                      authorImage={item.id}
                     />
-                  );
-                })
-              }
-            </Box>
-            <Box
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-            >
-              {
-                comments.map((item) => (
-                  <CommentSection
-                    key={item.id}
-                    name={item.name}
-                    body={item.body}
-                    email={item.email}
-                    authorImage={item.id}
-                  />
-                ))
-              }
+                  ))
+                }
+              </Box>
             </Box>
           </div>
         )}
