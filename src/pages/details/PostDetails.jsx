@@ -10,6 +10,7 @@ import Loading from '../../components/loading/Loading';
 import PostSection from '../../components/postSection/PostSection';
 import CommentSection from '../../components/commentSection/CommentSection';
 import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
 
 function PostDetails() {
   const { id } = useParams();
@@ -79,6 +80,7 @@ function PostDetails() {
                 }
               </Box>
             </Box>
+            <Footer />
           </div>
         )}
     </div>

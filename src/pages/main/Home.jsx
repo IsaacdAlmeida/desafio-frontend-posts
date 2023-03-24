@@ -7,6 +7,7 @@ import { setUsers } from '../../redux/reducers/usersSlice';
 import Loading from '../../components/loading/Loading';
 import Header from '../../components/header/Header';
 import PostCard from '../../components/postCard/PostCard';
+import Footer from '../../components/footer/Footer';
 import { getUsers } from '../../services/apiUserHelper';
 
 function Home() {
@@ -59,6 +60,7 @@ function Home() {
             </VStack>
           )}
       </div>
+      <Footer />
     </>
   );
 }
