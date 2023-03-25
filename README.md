@@ -1,4 +1,4 @@
-# Recipes App
+# Blog Posts - Desafio Técnico
 
 ## Introdução
 
@@ -40,6 +40,8 @@ http://localhost:3000
  ┃ ┃ ┗ 📜ToggleColorMode.jsx
  ┃ ┣ 📂commentSection
  ┃ ┃ ┗ 📜CommentSection.jsx
+ ┃ ┣ 📂footer
+ ┃ ┃ ┗ 📜Footer.jsx
  ┃ ┣ 📂header
  ┃ ┃ ┗ 📜Header.jsx
  ┃ ┣ 📂loading
@@ -96,6 +98,10 @@ O arquivo raíz da aplicação React, responsável por configurar alguns element
 ### Arquivo theme.js
 
 Arquivo necessário para configurar os temas globais do Chakra UI.
+
+## Deploy da Aplicação
+
+A aplicação também está disponível [nesse site](https://desafio-frontend-posts-pv0h7pyf0-isaacdalmeida.vercel.app/home). O Deploy foi feito utilizando Vercel, o que permite o uso da aplicação por qualquer pessoa.
 
 ## Histórico de commits
 
