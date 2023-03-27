@@ -5,13 +5,16 @@ import {
   Button,
   Heading,
   Text,
+  Link,
 } from '@chakra-ui/react';
 import { BiLike, BiChat, BiShare } from 'react-icons/bi';
+import { NavLink as ReachLink } from 'react-router-dom';
 
 function PostSection({
   title,
   body,
   postAuthor,
+  authorId,
 }) {
   return (
     <Box
@@ -29,7 +32,9 @@ function PostSection({
           letterSpacing="wide"
           fontSize="xs"
         >
-          {`Escrito por ${postAuthor}`}
+          <Link as={ReachLink} to={`/users/posts/${authorId}`}>
+            {`Escrito por ${postAuthor}`}
+          </Link>
         </Text>
       </Box>
       <Text
@@ -64,6 +69,7 @@ function PostSection({
 PostSection.propTypes = {
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
+  authorId: PropTypes.number.isRequired,
   postAuthor: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,

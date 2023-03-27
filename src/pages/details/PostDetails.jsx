@@ -57,6 +57,7 @@ function PostDetails() {
                         title={item.title}
                         body={item.body}
                         postAuthor={postAuthor.name}
+                        authorId={item.userId}
                       />
                     );
                   })

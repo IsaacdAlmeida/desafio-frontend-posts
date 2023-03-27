@@ -38,6 +38,8 @@ http://localhost:3000
  ┣ 📂components
  ┃ ┣ 📂buttons
  ┃ ┃ ┗ 📜ToggleColorMode.jsx
+ ┃ ┣ 📂cards
+ ┃ ┃ ┗ 📜UserInfosCard.jsx
  ┃ ┣ 📂commentSection
  ┃ ┃ ┗ 📜CommentSection.jsx
  ┃ ┣ 📂footer
@@ -48,20 +50,27 @@ http://localhost:3000
  ┃ ┃ ┗ 📜Loading.jsx
  ┃ ┣ 📂postCard
  ┃ ┃ ┗ 📜PostCard.jsx
- ┃ ┗ 📂postSection
+ ┃ ┣ 📂postSection
  ┃ ┃ ┗ 📜PostSection.jsx
+ ┃ ┗ 📜README.md
  ┣ 📂pages
  ┃ ┣ 📂details
  ┃ ┃ ┗ 📜PostDetails.jsx
- ┃ ┗ 📂main
+ ┃ ┣ 📂main
  ┃ ┃ ┗ 📜Home.jsx
+ ┃ ┣ 📂users
+ ┃ ┃ ┣ 📜Users.jsx
+ ┃ ┃ ┗ 📜UsersPosts.jsx
+ ┃ ┗ 📜README.md
  ┣ 📂redux
  ┃ ┣ 📂reducers
  ┃ ┃ ┣ 📜postSlice.js
  ┃ ┃ ┗ 📜usersSlice.js
- ┃ ┗ 📂store
+ ┃ ┣ 📂store
  ┃ ┃ ┗ 📜index.js
+ ┃ ┗ 📜README.md
  ┣ 📂services
+ ┃ ┣ 📜README.md
  ┃ ┣ 📜apiPostsHelper.js
  ┃ ┗ 📜apiUserHelper.js
  ┣ 📜App.jsx
