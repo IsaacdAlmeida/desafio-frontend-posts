@@ -53,7 +53,7 @@ CommentSection.propTypes = {
   name: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
-  authorImage: PropTypes.string.isRequired,
+  authorImage: PropTypes.number.isRequired,
 };
 
 export default CommentSection;

@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import Home from './pages/main/Home';
 import PostDetails from './pages/details/PostDetails';
+import Users from './pages/users/Users';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             element={<Navigate to="/home" replace />}
           />
           <Route path="/post/:id" element={<PostDetails />} />
+          <Route path="/users" element={<Users />} />
         </Routes>
       </Provider>
     </div>
