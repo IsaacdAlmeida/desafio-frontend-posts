@@ -47,6 +47,11 @@ function Header() {
               Home
             </MenuItem>
           </Link>
+          <Link as={ReachLink} to="/users">
+            <MenuItem>
+              Autores
+            </MenuItem>
+          </Link>
           <Link href="https://www.linkedin.com/in/isaacalmeidafilho/" isExternal>
             <MenuItem>Linkedin</MenuItem>
           </Link>
@@ -54,7 +59,6 @@ function Header() {
             <MenuItem>Github</MenuItem>
           </Link>
           <MenuItem>Contato</MenuItem>
-          <MenuItem>Lore Ipsum</MenuItem>
         </MenuList>
       </Menu>
       <ToggleColorMode />

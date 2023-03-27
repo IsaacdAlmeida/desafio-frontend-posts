@@ -1,31 +1,35 @@
 import React, { useEffect } from 'react';
-import { Grid, VStack, useColorModeValue } from '@chakra-ui/react';
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { setUsers } from '../../redux/reducers/usersSlice';
-import Loading from '../../components/loading/Loading';
+import { Grid, VStack, useColorModeValue } from '@chakra-ui/react';
+import { setPosts } from '../../redux/reducers/postSlice';
 import Header from '../../components/header/Header';
-import UserInfosCard from '../../components/cards/UserInfosCard';
+import PostCard from '../../components/postCard/PostCard';
+import Loading from '../../components/loading/Loading';
 import Footer from '../../components/footer/Footer';
-import { getUsers } from '../../services/apiUserHelper';
+import { getPosts } from '../../services/apiPostsHelper';
 
-function Users() {
+function UsersPosts() {
   const dispatch = useDispatch();
-  const { arrayOfUsers } = useSelector((state) => state.usersSlice);
+  const { id } = useParams();
+  const { posts } = useSelector((state) => state.postSlice);
 
   useEffect(() => {
     const mainPost = async () => {
-      const users = await getUsers();
-      dispatch(setUsers(users));
+      const response = await getPosts();
+      dispatch(setPosts(response));
     };
 
     mainPost();
   }, []);
 
+  const postsFiltered = posts.filter((item) => item.userId === (+id));
+
   return (
     <>
       <Header />
       <div>
-        {arrayOfUsers.length === 0
+        {postsFiltered.length === 0
           ? <Loading />
           : (
             <VStack spacing={4} pt="3" bg={useColorModeValue('gray.100', 'blackAlpha.100')}>
@@ -37,14 +41,13 @@ function Users() {
                 margin="0 auto"
               >
                 {
-                  arrayOfUsers.map((item) => (
-                    <UserInfosCard
+                  postsFiltered.map((item) => (
+                    <PostCard
                       key={item.id}
-                      authorImage={item.id}
-                      authorName={item.name}
-                      userName={item.username}
-                      catchPhrase={item.company.catchPhrase}
-                      authorId={item.id}
+                      postImage={`https://picsum.photos/id/${item.id}/400/400`}
+                      postId={item.id}
+                      title={item.title}
+                      body={item.body}
                     />
                   ))
                 }
@@ -57,4 +60,4 @@ function Users() {
   );
 }
 
-export default Users;
+export default UsersPosts;

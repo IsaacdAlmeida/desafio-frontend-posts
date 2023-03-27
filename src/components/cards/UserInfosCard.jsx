@@ -9,13 +9,16 @@ import {
   Stack,
   Button,
   useColorModeValue,
+  Link,
 } from '@chakra-ui/react';
+import { NavLink as ReachLink } from 'react-router-dom';
 
 function UserInfosCard({
   authorImage,
   authorName,
   userName,
   catchPhrase,
+  authorId,
 }) {
   return (
     <Center py={6}>
@@ -85,7 +88,9 @@ function UserInfosCard({
               bg: 'blue.500',
             }}
           >
-            Posts
+            <Link as={ReachLink} to={`/users/posts/${authorId}`}>
+              Posts
+            </Link>
           </Button>
         </Stack>
       </Box>
@@ -98,6 +103,7 @@ UserInfosCard.propTypes = {
   authorName: PropTypes.string.isRequired,
   userName: PropTypes.string.isRequired,
   catchPhrase: PropTypes.string.isRequired,
+  authorId: PropTypes.number.isRequired,
 };
 
 export default UserInfosCard;

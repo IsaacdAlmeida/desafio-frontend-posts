@@ -27,6 +27,7 @@ function Footer() {
       >
         <Stack direction="row" spacing={6}>
           <Link as={ReachLink} to="/home">Home</Link>
+          <Link as={ReachLink} to="/users">Autores</Link>
           <Link href="https://www.linkedin.com/in/isaacalmeidafilho/" isExternal>Linkedin</Link>
           <Link href="https://desafio-frontend-posts.vercel.app/home" isExternal>Blog</Link>
         </Stack>
