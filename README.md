@@ -110,7 +110,7 @@ Arquivo necessário para configurar os temas globais do Chakra UI.
 
 ## Deploy da Aplicação
 
-A aplicação também está disponível [nesse site](https://desafio-frontend-posts-pv0h7pyf0-isaacdalmeida.vercel.app/home). O Deploy foi feito utilizando Vercel, o que permite o uso da aplicação por qualquer pessoa.
+A aplicação também está disponível [nesse site](https://desafio-frontend-posts.vercel.app/home). O Deploy foi feito utilizando Vercel, o que permite o uso da aplicação por qualquer pessoa.
 
 ## Histórico de commits
 
